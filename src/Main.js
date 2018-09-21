@@ -55,7 +55,7 @@ const Button = styled.button`
 export default () => (
   <Wrapper>
     <Form>
-      <H1>Скопировать сайт онлайн. Бесплатно</H1>
+      <H1>Скопировать сайт онлайн. Бесплатно.</H1>
       <div>
         <Input type="text" placeholder="Введите адрес сайта" />
         <Button type="submit">Скопировать</Button>
