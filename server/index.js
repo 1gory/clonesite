@@ -4,9 +4,10 @@ import {StaticRouter} from 'react-router-dom';
 import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 import {renderToString} from 'react-dom/server';
 import {CookiesProvider} from 'react-cookie';
-import App from '../src/app';
-import fs from 'fs';
 import path from 'path';
+import fs from 'fs';
+import './ignore-styles';
+import App from '../src/app';
 
 const app = express();
 
