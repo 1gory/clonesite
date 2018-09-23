@@ -26,7 +26,7 @@ const compress = (sourcePath) =>
       zip.addLocalFolder(sourcePath);
       return zip.toBuffer((res) => resolve(res));
     } catch (e) {
-      reject();
+      reject(e);
     }
   })
 ;
