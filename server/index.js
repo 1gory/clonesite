@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import React from 'react';
 import {StaticRouter} from 'react-router-dom';
 import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
@@ -13,6 +14,11 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '..', 'static')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use('/api', require('./api/copy').default);
 
 app.get('/*', (req, res) => {
   const filePath = path.resolve(__dirname, '..', 'public', 'index.html');

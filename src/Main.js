@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import archive from './archive.svg';
+import isUrl from 'is-url';
 
 const Wrapper = styled.div`
   text-align: center;  
   background-color: #2c71a1;
-  height: 100vh;
+  height: 100%;
 `;
 
 const H1 = styled.h1`
@@ -25,15 +26,12 @@ const H2 = styled.h2`
 `;
 
 const InputWrapper = styled.div`
-  
+  margin: 0 auto;
+  width: 600px;
 `;
 
 const Form = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
+ padding-top: 50px;
 `;
 
 const Input = styled.input`
@@ -61,11 +59,19 @@ const Button = styled.button`
   cursor: pointer;
   margin-left: 10px;
   
-  &:hover {
-    background-color: #ffa353;
-    -o-transition: all .3s;
-    transition: all .3s;
-  }
+  ${({isLoading})=>(isLoading && `
+    cursor: arrow;
+    box-shadow: none;
+    background: #c3c3c3;
+  `)}
+  
+  ${({isLoading})=>(!isLoading && `
+    &:hover {
+      background-color: #ffa353;
+      -o-transition: all .3s;
+      transition: all .3s;
+    }
+  `)}
   
   &:after {
     content: "";
@@ -79,15 +85,111 @@ const Button = styled.button`
   }
 `;
 
-export default () => (
-  <Wrapper>
-    <Form>
-      <H1>Скопировать сайт онлайн. Бесплатно.</H1>
-      <H2>Загрузка архива начнется автоматически</H2>
-      <InputWrapper>
-        <Input type="text" placeholder="Введите адрес сайта" />
-        <Button type="submit">Скопировать</Button>
-      </InputWrapper>
-    </Form>
-  </Wrapper>
-);
+const Message = styled.div`
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  color: ${(props) => props.message.status === 'success' ? '#60cc60' : '#e04c4c'};
+  display: ${(props) => props.message.text ? 'block' : 'none'};
+`;
+
+export default class extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      loading: false,
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendForm = this.sendForm.bind(this);
+  }
+
+  handleChange(e) {
+    const state = {};
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if(isUrl(this.state.url)){
+      this.setState({message: {
+        text: 'Загрузка сайта скоро начнется',
+        status: 'success',
+      }});
+      this.sendForm();
+    } else {
+      this.setState({message: {
+        text: 'Некорректно введен адрес сайта',
+        status: 'error',
+      }});
+    }
+  }
+
+  sendForm() {
+    this.setState({loading: true});
+    fetch('/api/copy', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({url: this.state.url}),
+    }).then(async (data) => {
+      if (data.status !== 200) {
+        const response = await data.json();
+        if(response){
+          this.setState({message: {
+            loading: false,
+            text: response.message,
+            status: 'error',
+          }});
+        }
+        throw new Error("server response is not OK");
+      }
+      const blob = await data.blob();
+      const newBlob = new Blob([blob], {type: "application/zip"});
+      const datax = window.URL.createObjectURL(newBlob);
+      const link = document.createElement('a');
+      link.href = datax;
+      link.download=`${this.state.url}.zip`;
+      link.click();
+      setTimeout(function(){window.URL.revokeObjectURL(datax), 100 });
+      this.setState({loading: false});
+    }).catch(async (data) => {
+      console.log(data);
+      // const response = await data.json();
+      // cosnt message =
+      // this.setState({message: {
+      //   loading: false,
+      //   text: 'Некорректно введен адрес сайта',
+      //   status: 'error',
+      // }});
+    });
+  }
+
+  render() {
+    return <Wrapper>
+      <Form>
+        <H1>Скопировать сайт онлайн. Бесплатно.</H1>
+        <H2>Загрузка архива начнется автоматически</H2>
+        <InputWrapper>
+          <Input name="url" type="text" placeholder="Введите адрес сайта (http://site.ru)" onChange={this.handleChange}/>
+          <Button
+            type="submit"
+            onClick={this.handleSubmit}
+            isLoading={this.state.loading}
+            disabled={this.state.loading && 'disabled'}
+          >Скопировать</Button>
+          {this.state.message &&
+            <Message message={this.state.message}>
+              <span>{this.state.message.text}</span>
+            </Message>
+          }
+        </InputWrapper>
+      </Form>
+    </Wrapper>
+  }
+}
