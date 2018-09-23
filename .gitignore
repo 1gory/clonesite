@@ -3,4 +3,7 @@
 
 /static/*
 
+/compressed/*
+!/compressed/.gitkeep
+
 package-lock.json
