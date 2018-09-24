@@ -25,7 +25,12 @@ const H2 = styled.h2`
 
 const InputWrapper = styled.div`
   margin: 0 auto;
-  width: 600px;
+  max-width: 600px;
+  padding: 0 20px;
+  
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const Form = styled.div`
@@ -39,8 +44,14 @@ const Input = styled.input`
   border-radius: 3px;
   font-family: inherit;
   font-size: inherit;
-  width: 400px;
+  width: 100%;
   cursor: pointer;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 
 const Button = styled.button`
