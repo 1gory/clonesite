@@ -95,6 +95,8 @@ const Button = styled.button`
 `;
 
 const Message = styled.div`
+  margin: 0 auto;
+  max-width: 600px;
   padding: 10px;
   width: 100%;
   text-align: left;
@@ -185,12 +187,12 @@ export default class extends Component {
             isLoading={this.state.loading}
             disabled={this.state.loading && 'disabled'}
           >Скопировать</Button>
-          {this.state.message &&
-            <Message message={this.state.message}>
-              <span>{this.state.message.text}</span>
-            </Message>
-          }
         </InputWrapper>
+        {this.state.message &&
+          <Message message={this.state.message}>
+            <span>{this.state.message.text}</span>
+          </Message>
+        }
       </Form>
     </Wrapper>
   }
