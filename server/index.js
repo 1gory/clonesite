@@ -21,10 +21,9 @@ app.use(bodyParser.json());
 app.use('/api', require('./api/copy').default);
 
 app.get('/*', (req, res) => {
-  const filePath = path.resolve(__dirname, '..', 'public', 'index.html');
+  const filePath = path.resolve(__dirname, '..', 'public', 'main.html');
   fs.readFile(filePath, 'utf8', (err, htmlData) => {
     if (err) {
-      // logger.error('read err', err);
       return res.status(404).end();
     }
 

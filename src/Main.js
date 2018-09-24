@@ -169,13 +169,6 @@ export default class extends Component {
       this.setState({loading: false});
     }).catch(async (data) => {
       console.log(data);
-      // const response = await data.json();
-      // cosnt message =
-      // this.setState({message: {
-      //   loading: false,
-      //   text: 'Некорректно введен адрес сайта',
-      //   status: 'error',
-      // }});
     });
   }
 
