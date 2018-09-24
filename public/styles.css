@@ -2,11 +2,16 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    height: 100%;
+    background-color: #2c71a1;
 }
 
 html {
     height: 100%;
+}
+
+#vk_comments_block {
+    max-width: 748px;
+    margin: 0 auto;
 }
 
 #root {

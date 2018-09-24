@@ -5,8 +5,6 @@ import isUrl from 'is-url';
 
 const Wrapper = styled.div`
   text-align: center;  
-  background-color: #2c71a1;
-  height: 100%;
 `;
 
 const H1 = styled.h1`
@@ -31,7 +29,7 @@ const InputWrapper = styled.div`
 `;
 
 const Form = styled.div`
- padding-top: 50px;
+ padding: 50px 0;
 `;
 
 const Input = styled.input`
