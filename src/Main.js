@@ -105,7 +105,7 @@ const Message = styled.div`
 `;
 
 const Footer = styled.div`
-  paddig: 30px 0;
+  padding: 30px 0;
   color: #fff;
   
   & a {
