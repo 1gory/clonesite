@@ -127,7 +127,7 @@ const FAQ = styled.div`
   text-align: left;
   max-width: 768px;
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 `;
 
 export default class extends Component {
