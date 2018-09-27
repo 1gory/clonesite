@@ -125,6 +125,13 @@ export default class extends Component {
     this.sendForm = this.sendForm.bind(this);
   }
 
+  componentDidMount() {
+    if (window) {
+      VK.init({apiId: 6702137, onlyWidgets: true});
+      VK.Widgets.Comments("vk_comments", {limit: 5, attach: "*"});
+    }
+  }
+
   handleChange(e) {
     const state = {};
     state[e.target.name] = e.target.value;
