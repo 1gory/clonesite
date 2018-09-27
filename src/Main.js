@@ -130,6 +130,7 @@ export default class extends Component {
         text: 'Загрузка сайта скоро начнется',
         status: 'success',
       }});
+      yaCounter50440108.reachGoal('clone_action');
       this.sendForm();
     } else {
       this.setState({message: {
