@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import archive from './archive.svg';
 import isUrl from 'is-url';
+import archive from './archive.svg';
+import logo from './logo.svg';
 
 const Wrapper = styled.div`
   text-align: center;  
+`;
+
+const Logo = styled.img`
+  width: 100px;
+  padding-top: 40px;
 `;
 
 const H1 = styled.h1`
@@ -38,7 +44,7 @@ const InputWrapper = styled.div`
 `;
 
 const Form = styled.div`
- padding: 50px 0;
+ padding-bottom: 50px;
 `;
 
 const Input = styled.input`
@@ -204,6 +210,7 @@ export default class extends Component {
 
   render() {
     return <Wrapper>
+      <Logo src={logo} />
       <Form>
         <H1>Скопировать сайт онлайн. Бесплатно.</H1>
         <H2>Загрузка архива начнется автоматически</H2>
