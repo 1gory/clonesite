@@ -23,6 +23,10 @@ const H2 = styled.h2`
   margin-top: 10px;
 `;
 
+const H3 = styled.h3`
+  
+`;
+
 const InputWrapper = styled.div`
   margin: 0 auto;
   max-width: 600px;
@@ -111,6 +115,13 @@ const Footer = styled.div`
   & a {
     color: #fff;
   }
+`;
+
+const FAQ = styled.div`
+  text-align: left;
+  max-width: 768px;
+  margin: 0 auto;
+  padding-bottom: 30px;
 `;
 
 export default class extends Component {
@@ -211,6 +222,16 @@ export default class extends Component {
           </Message>
         }
       </Form>
+
+      <FAQ>
+        <H3>Как работает сервис</H3>
+        В процессе заполнения
+        <H3>Как использовать скачанные файлы</H3>
+        В процессе заполнения
+        <H3>Если результат не подходит</H3>
+        В процессе заполнения
+      </FAQ>
+
       <div id="vk_comments_block">
         <div id="vk_comments" />
       </div>
