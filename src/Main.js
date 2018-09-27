@@ -245,7 +245,7 @@ export default class extends Component {
       <Footer>
         <a href="https://clonesite.ru">clonesite.ru</a>
         <div>
-          Права не защищены.<br /> Можете скопировать этот сайт.
+          Права не защищены<br /> Можете скопировать этот сайт
         </div>
         <div>{(new Date()).getFullYear()}</div>
       </Footer>
