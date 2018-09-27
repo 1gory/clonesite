@@ -247,7 +247,7 @@ export default class extends Component {
         <div>
           Права не защищены.<br /> Можете скопировать этот сайт.
         </div>
-        <div>2018</div>
+        <div>{(new Date()).getFullYear()}</div>
       </Footer>
     </Wrapper>
   }
