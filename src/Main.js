@@ -104,6 +104,14 @@ const Message = styled.div`
   display: ${(props) => props.message.text ? 'block' : 'none'};
 `;
 
+const Footer = styled.div`
+  color: #fff;
+  
+  & a {
+    color: #fff;
+  }
+`;
+
 export default class extends Component {
   constructor() {
     super();
@@ -195,6 +203,14 @@ export default class extends Component {
           </Message>
         }
       </Form>
+      <div id="vk_comments_block">
+        <div id="vk_comments" />
+      </div>
+      <Footer>
+        <a href="https://clonesite.ru">clonesite.ru</a>
+        <div>Права права не защищены. Можете скопировать этот сайт.</div>
+        <div>2018</div>
+      </Footer>
     </Wrapper>
   }
 }
