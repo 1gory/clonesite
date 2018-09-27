@@ -105,6 +105,7 @@ const Message = styled.div`
 `;
 
 const Footer = styled.div`
+  paddig: 30px 0;
   color: #fff;
   
   & a {
@@ -215,7 +216,9 @@ export default class extends Component {
       </div>
       <Footer>
         <a href="https://clonesite.ru">clonesite.ru</a>
-        <div>Права права не защищены. Можете скопировать этот сайт.</div>
+        <div>
+          Права не защищены.<br /> Можете скопировать этот сайт.
+        </div>
         <div>2018</div>
       </Footer>
     </Wrapper>
