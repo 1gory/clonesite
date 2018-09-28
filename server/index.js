@@ -41,6 +41,10 @@ app.get('/*', (req, res) => {
       </StyleSheetManager>,
     );
 
+    if (context.status === 404) {
+      res.status(404);
+    }
+
     const styleTags = sheet.getStyleTags();
 
     const RenderedApp = process.env.NODE_ENV === 'development' ?
