@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import isUrl from 'is-url';
 import archive from './archive.svg';
 import logo from './logo.svg';
+import FAQ from './Faq';
 
 const Wrapper = styled.div`
   text-align: center;  
@@ -30,14 +31,6 @@ const H2 = styled.h2`
   color: #fff;
   text-shadow: 1px 1px 2px black;
   font-size: 24px;
-  margin-top: 10px;
-`;
-
-const H3 = styled.h3`
-  margin-bottom: 5px;
-`;
-
-const P = styled.p`
   margin-top: 10px;
 `;
 
@@ -128,20 +121,6 @@ const Footer = styled.div`
   
   & a {
     color: #fff;
-  }
-`;
-
-const FAQ = styled.div`
-  text-align: left;
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 0 15px;
-  padding-bottom: 70px;
-`;
-
-const UL = styled.ul`
-  & li {
-    padding-bottom: 10px;
   }
 `;
 
@@ -247,23 +226,7 @@ export default class extends Component {
         }
       </Form>
 
-      <FAQ>
-        <H3>Как работает сервис</H3>
-        <P>
-          В основе сервиса лежит <b>wget</b> - весьма полезная и простая утилита Linux. На серверной стороне она выглядит как <b>"wget -k -p -Q10M http://site.com"</b>.
-          <UL>
-            <li>Параметр <b>-p</b> означает, что все ресурсы, на которые есть ссылки в документе (картинки, css, js) будут будут сохранены вместе с главным документом.</li>
-            <li>Параметр <b>-k</b> укажет программе преобразовать все ссылки на ресурсы, чтобы их можно было использовать на компьютере.</li>
-            <li>Параметр <b>-Q10M</b>, задает ограничение в 10 мегабайт на размер всего скачиваемого сайта (это сделано в целях безопасности).</li>
-          </UL>
-        </P>
-        <H3>Как использовать скачанные файлы</H3>
-        Если ссылка введена правильно, загрузка сайта начнется автоматически, спустя некотороые время.
-        На ваш компьютер будет сохранен архив с файлами. После распаковки найдите в папке index.html и откройте в браузере.
-        Если загрузка прошла успешно и все файлы корректно отобразились, вы увидите сохраненную копию сайта (лендинга).
-        <H3>Если результат не подходит</H3>
-        В процессе заполнения
-      </FAQ>
+      <FAQ/>
 
       <div id="vk_comments_block">
         <div id="vk_comments" />
