@@ -4,6 +4,7 @@ import isUrl from 'is-url';
 import archive from './archive.svg';
 import logo from './logo.svg';
 import FAQ from './Faq';
+import Footer from './Footer';
 
 const Wrapper = styled.div`
   text-align: center;  
@@ -115,15 +116,6 @@ const Message = styled.div`
   display: ${(props) => props.message.text ? 'block' : 'none'};
 `;
 
-const Footer = styled.div`
-  padding: 30px 0;
-  color: #fff;
-  
-  & a {
-    color: #fff;
-  }
-`;
-
 export default class extends Component {
   constructor() {
     super();
@@ -231,13 +223,8 @@ export default class extends Component {
       <div id="vk_comments_block">
         <div id="vk_comments" />
       </div>
-      <Footer>
-        <a href="https://clonesite.ru">clonesite.ru</a>
-        <div>
-          Права не защищены<br /> Можете скопировать этот сайт
-        </div>
-        <div>{(new Date()).getFullYear()}</div>
-      </Footer>
+
+      <Footer/>
     </Wrapper>
   }
 }
