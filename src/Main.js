@@ -21,6 +21,10 @@ const H1 = styled.h1`
   margin-bottom: 0;
 `;
 
+const Sup = styled.sup`
+  font-size: 15px;
+`;
+
 const H2 = styled.h2`
   font-family: 'Roboto', sans-serif;
   color: #fff;
@@ -30,7 +34,11 @@ const H2 = styled.h2`
 `;
 
 const H3 = styled.h3`
-  
+  margin-bottom: 5px;
+`;
+
+const P = styled.p`
+  margin-top: 10px;
 `;
 
 const InputWrapper = styled.div`
@@ -43,7 +51,7 @@ const InputWrapper = styled.div`
   }
 `;
 
-const Form = styled.div`
+const Form = styled.form`
  padding-bottom: 50px;
 `;
 
@@ -127,7 +135,14 @@ const FAQ = styled.div`
   text-align: left;
   max-width: 768px;
   margin: 0 auto;
+  padding: 0 15px;
   padding-bottom: 70px;
+`;
+
+const UL = styled.ul`
+  & li {
+    padding-bottom: 10px;
+  }
 `;
 
 export default class extends Component {
@@ -210,9 +225,11 @@ export default class extends Component {
 
   render() {
     return <Wrapper>
-      <Logo src={logo} />
+      <a href="/">
+        <Logo src={logo} />
+      </a>
       <Form>
-        <H1>Скопировать сайт онлайн. Бесплатно.</H1>
+        <H1>Скопировать сайт онлайн. Бесплатно.<Sup>Alpha</Sup></H1>
         <H2>Загрузка архива начнется автоматически</H2>
         <InputWrapper>
           <Input name="url" type="text" placeholder="Введите адрес сайта (http://site.ru)" onChange={this.handleChange}/>
@@ -232,9 +249,18 @@ export default class extends Component {
 
       <FAQ>
         <H3>Как работает сервис</H3>
-        В процессе заполнения
+        <P>
+          В основе сервиса лежит <b>wget</b> - весьма полезная и простая утилита Linux. На серверной стороне она выглядит как <b>"wget -k -p -Q10M http://site.com"</b>.
+          <UL>
+            <li>Параметр <b>-p</b> означает, что все ресурсы, на которые есть ссылки в документе (картинки, css, js) будут будут сохранены вместе с главным документом.</li>
+            <li>Параметр <b>-k</b> укажет программе преобразовать все ссылки на ресурсы, чтобы их можно было использовать на компьютере.</li>
+            <li>Параметр <b>-Q10M</b>, задает ограничение в 10 мегабайт на размер всего скачиваемого сайта (это сделано в целях безопасности).</li>
+          </UL>
+        </P>
         <H3>Как использовать скачанные файлы</H3>
-        В процессе заполнения
+        Если ссылка введена правильно, загрузка сайта начнется автоматически, спустя некотороые время.
+        На ваш компьютер будет сохранен архив с файлами. После распаковки найдите в папке index.html и откройте в браузере.
+        Если загрузка прошла успешно и все файлы корректно отобразились, вы увидите сохраненную копию сайта (лендинга).
         <H3>Если результат не подходит</H3>
         В процессе заполнения
       </FAQ>
