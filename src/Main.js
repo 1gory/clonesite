@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import isUrl from 'is-url';
 import archive from './archive.svg';
-import logo from './logo.svg';
 import FAQ from './Faq';
 import Footer from './Footer';
+import Header from './Header';
 
 const Wrapper = styled.div`
   text-align: center;  
-`;
-
-const Logo = styled.img`
-  width: 100px;
-  padding-top: 40px;
 `;
 
 const H1 = styled.h1`
@@ -196,9 +191,7 @@ export default class extends Component {
 
   render() {
     return <Wrapper>
-      <a href="/">
-        <Logo src={logo} />
-      </a>
+      <Header/>
       <Form>
         <H1>Скопировать сайт онлайн. Бесплатно.<Sup>Alpha</Sup></H1>
         <H2>Загрузка архива начнется автоматически</H2>
