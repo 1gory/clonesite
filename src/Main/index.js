@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import isUrl from 'is-url';
 import FAQ from './Faq';
-import Footer from './Footer';
-import Header from './Header';
-import Button from './Button';
+import Footer from '../generic/Footer';
+import Header from '../generic/Header';
+import Button from '../generic/Button';
 
 const Wrapper = styled.div`
   text-align: center;  
@@ -13,8 +13,8 @@ const Wrapper = styled.div`
 const H1 = styled.h1`
   font-size: 38px;
   font-family: 'Roboto', sans-serif;
-  color: #fff;
-  text-shadow: 1px 1px 2px black;
+  color: #000;
+  // text-shadow: 1px 1px 2px black;
   margin-bottom: 0;
 `;
 
@@ -24,8 +24,8 @@ const Sup = styled.sup`
 
 const H2 = styled.h2`
   font-family: 'Roboto', sans-serif;
-  color: #fff;
-  text-shadow: 1px 1px 2px black;
+  color: #000;
+  // text-shadow: 1px 1px 2px black;
   font-size: 24px;
   margin-top: 10px;
 `;
@@ -47,7 +47,7 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 10px;
   color: #333;
-  border: none;
+  border: 1px solid gray;
   border-radius: 3px;
   font-family: inherit;
   font-size: inherit;

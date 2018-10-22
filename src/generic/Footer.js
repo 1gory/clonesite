@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Footer = styled.div`
+  text-align: center;
   font-size: 12px;
   padding: 30px 0;
-  color: #fff;
+  color: #000;
 `;
 
 const StyledLink = styled.a`
-  color: #fff;
+  color: #000;
 `;
 
 export default () => (

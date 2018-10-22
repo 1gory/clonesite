@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const H3 = styled.h3`
   margin-bottom: 5px;
+  font-size: 22px;
 `;
 
 const P = styled.p`

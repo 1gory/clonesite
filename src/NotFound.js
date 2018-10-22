@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './generic/Header';
+import Footer from './generic/Footer';
 
 const Wrapper = styled.div`
   text-align: center;

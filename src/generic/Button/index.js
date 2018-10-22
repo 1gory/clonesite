@@ -11,7 +11,6 @@ export default styled.button`
   font-size: inherit;
   color: #fff;
   background: #f57c00;
-  box-shadow: 0 1px 0 0 #d84d00, 0 2px 6px 0 rgba(0,0,0,.15);
   cursor: pointer;
   margin-left: 10px;
   
