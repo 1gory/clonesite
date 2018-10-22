@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const H3 = styled.h3`
@@ -18,7 +19,7 @@ const FAQ = styled.div`
   padding-bottom: 70px;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   color: inherit;
 `;
 
@@ -32,7 +33,7 @@ export default () => (
   <FAQ>
     <H3>Как работает сервис</H3>
     <P>
-      <StyledLink href="/">clonesite.ru</StyledLink> - сервис, с помощью которого можно полностью скачать сайт на компьютер онлайн и бесплатно.<br />
+      <StyledLink to="/">clonesite.ru</StyledLink> - сервис, с помощью которого можно полностью скачать сайт на компьютер онлайн и бесплатно.<br />
       В основе сервиса лежит <b>wget</b> - полезная и простая программа Linux. На серверной стороне она выглядит как <b>"wget -k -p -Q10M http://site.com"</b>:
       <UL>
         <li>Параметр <b>-p</b> означает, что все ресурсы, на которые есть ссылки в документе (картинки, css, js) будут будут сохранены вместе с главным документом.</li>
@@ -48,6 +49,7 @@ export default () => (
     </P>
     <H3>Если результат не подходит</H3>
     <P>
+      Вы можете воспользоваться <StyledLink to='/other'>альтернативными методами</StyledLink>.<br />
       Напишите комментарий в форму ниже: адрес сайта который вы пытались скопировать и детали. Мы постараемся, по возможности,
       выяснить в чем дело и напишем ответ.
     </P>
