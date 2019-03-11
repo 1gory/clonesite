@@ -97,8 +97,16 @@ export default class extends Component {
     this.setState(state);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  async handleSubmit(e) {
+    e.preventDefault(this.state.url);
+    if(!(/^https?:\/\/.*$/.test(this.state.url))){
+      alert(1);
+      await new Promise((resolve) => {
+        this.setState(({url}) => ({
+          url: `http://${url}`
+        }), resolve)
+      });
+    }
     if(isUrl(this.state.url)){
       this.setState({message: {
         text: 'Загрузка сайта скоро начнется',
@@ -156,7 +164,7 @@ export default class extends Component {
         <H1>Скопировать сайт онлайн. Бесплатно.<Sup>Alpha</Sup></H1>
         <H2>Загрузка архива начнется автоматически</H2>
         <InputWrapper>
-          <Input name="url" type="text" placeholder="Введите адрес сайта (http://site.ru)" onChange={this.handleChange}/>
+          <Input name="url" type="text" placeholder="Введите адрес сайта (http://site.ru)" onChange={this.handleChange} value={this.state.url} />
           <Button
             type="submit"
             onClick={this.handleSubmit}

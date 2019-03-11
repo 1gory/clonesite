@@ -63,7 +63,7 @@ router.post('/copy', async (req, res, next) => {
   } catch (e) {
     res.status(400);
     res.json({
-      message: 'Can not process request',
+      message: 'Не удается скопировать сайт',
     });
     next();
   }
