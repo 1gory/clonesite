@@ -100,7 +100,6 @@ export default class extends Component {
   async handleSubmit(e) {
     e.preventDefault(this.state.url);
     if(!(/^https?:\/\/.*$/.test(this.state.url))){
-      alert(1);
       await new Promise((resolve) => {
         this.setState(({url}) => ({
           url: `http://${url}`
