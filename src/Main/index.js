@@ -152,6 +152,7 @@ export default class extends Component {
       setTimeout(function(){window.URL.revokeObjectURL(datax), 100 });
       this.setState({loading: false});
     }).catch(async (data) => {
+      this.setState({loading: false});
       console.log(data);
     });
   }
