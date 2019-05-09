@@ -14,7 +14,7 @@ router.post('/order', async (req, res, next) => {
 
     mailer(
       'Заказ | clonesite.ru',
-      `<span>${phone}</span><span>${site}</span>`,
+      `<span>${phone}</span> <span>${site}</span>`,
     );
   } catch (e) {
     next(e);
