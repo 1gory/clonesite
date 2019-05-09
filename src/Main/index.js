@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import isUrl from 'is-url';
 import FAQ from './Faq';
+import Order from './Order';
+import Popup from './PopUp';
 import Footer from '../generic/Footer';
 import Header from '../generic/Header';
 import Button from '../generic/Button';
@@ -14,12 +16,7 @@ const H1 = styled.h1`
   font-size: 38px;
   font-family: 'Roboto', sans-serif;
   color: #000;
-  // text-shadow: 1px 1px 2px black;
   margin-bottom: 0;
-`;
-
-const Sup = styled.sup`
-  font-size: 15px;
 `;
 
 const H2 = styled.h2`
@@ -77,6 +74,7 @@ export default class extends Component {
 
     this.state = {
       loading: false,
+      isPopUpOpen: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -157,11 +155,20 @@ export default class extends Component {
     });
   }
 
+  openPopUp = () => {
+    this.setState({ isPopUpOpen: true });
+  };
+
+  closePopUp = () => {
+    this.setState({ isPopUpOpen: false });
+  };
+
   render() {
+    const { isPopUpOpen } = this.state;
     return <Wrapper>
       <Header/>
       <Form>
-        <H1>Скопировать сайт онлайн. Бесплатно.<Sup>Alpha</Sup></H1>
+        <H1>Скопировать сайт онлайн. Бесплатно</H1>
         <H2>Загрузка архива начнется автоматически</H2>
         <InputWrapper>
           <Input name="url" type="text" placeholder="Введите адрес сайта (http://site.ru)" onChange={this.handleChange} value={this.state.url} />
@@ -178,6 +185,10 @@ export default class extends Component {
           </Message>
         }
       </Form>
+
+      <Popup isPopUpOpen={isPopUpOpen} closePopUp={this.closePopUp} />
+
+      <Order openPopUp={this.openPopUp} />
 
       <FAQ/>
 

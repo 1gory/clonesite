@@ -2,6 +2,7 @@
 /node_modules
 
 /server/encryption/*
+/server/services/config.js
 
 /static/*
 

@@ -10,7 +10,7 @@ const router = express.Router();
 const downloadWebsite = (url, hashPath) =>
   new Promise((resolve, reject) => {
     const path = `compressed/${hashPath}/`;
-    exec(`wget  -E -H -k -K -Q10M ${url} -P ${path}`, (error, stdout, stderr) => {
+    exec(`wget --content-on-error -k -p -Q10M ${url} -P ${path}`, (error, stdout, stderr) => {
       if (error) {
         console.log(stderr);
         reject(stderr);
