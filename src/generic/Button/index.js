@@ -13,6 +13,8 @@ export default styled.button`
   background: #f57c00;
   cursor: pointer;
   margin-left: 10px;
+  box-shadow: -5px 5px 20px rgba(255, 163, 83, .35);
+  transition: .2s;
   
   ${({isLoading})=>(isLoading && `
     cursor: arrow;
@@ -22,9 +24,7 @@ export default styled.button`
   
   ${({isLoading})=>(!isLoading && `
     &:hover {
-      background-color: #ffa353;
-      -o-transition: all .3s;
-      transition: all .3s;
+      box-shadow: -5px 5px 20px rgba(255, 163, 83, .65);
     }
   `)}
   

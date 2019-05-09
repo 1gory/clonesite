@@ -19,7 +19,7 @@ const Button = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  transition: .4s;
+  transition: .2s;
   &:hover {
     box-shadow: -5px 5px 20px rgba(88, 94, 234, 0.55);  
   }
