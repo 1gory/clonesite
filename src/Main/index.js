@@ -68,8 +68,18 @@ const Message = styled.div`
   display: ${(props) => props.message.text ? 'block' : 'none'};
 `;
 
-const Ads = styled.div`
+const AdsDesctop = styled.div`
   padding: 30px 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const AdsMobile = styled.div`
+  padding-bottom: 15px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export default class extends Component {
@@ -197,11 +207,17 @@ export default class extends Component {
 
       <FAQ/>
 
-      <Ads>
+      <AdsDesctop>
         <a target="_new" href="https://timeweb.com/ru/?i=36726&a=130">
           <img src="https://wm.timeweb.ru/images/posters/600x60/600x60-2-anim.gif" />
         </a>
-      </Ads>
+      </AdsDesctop>
+
+      <AdsMobile>
+        <a target="_new" href="https://timeweb.com/ru/?i=36726&a=91">
+          <img src="https://wm.timeweb.ru/images/posters/240x200/240x200-1-anim.gif" />
+        </a>
+      </AdsMobile>
 
       <div id="vk_comments_block">
         <div id="vk_comments" />

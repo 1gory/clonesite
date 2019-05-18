@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   max-width: 768px;
-  padding: 30px;
+  padding: 30px 15px;
   margin: 0 auto;
   text-align: left;
   background: #fafafa;
@@ -48,6 +48,9 @@ const Price = styled.div`
 const Form = styled.form`
   // display: flex;
   // justify-content: space-between;
+  & ul {
+    padding-left: 20px;
+  }
   
   & li {
     padding-bottom: 5px;
