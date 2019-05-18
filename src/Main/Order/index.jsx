@@ -10,7 +10,9 @@ const Wrapper = styled.div`
   border-radius: 20px;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
+  display: block;
+  text-decoration: none;
   box-shadow: -5px 5px 20px rgba(88, 94, 234, 0.35);
   background: #585EEA;
   border-radius: 5px;
@@ -44,16 +46,26 @@ const Price = styled.div`
 `;
 
 const Form = styled.form`
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   
   & li {
     padding-bottom: 5px;
   }
   
-  @media (max-width: 675px) {
-    flex-direction: column;
-  }
+  // @media (max-width: 675px) {
+  //   flex-direction: column;
+  // }
+`;
+
+const B = styled.span`
+  text-decoration: underline;
+  font-weight: 900;
+`;
+
+const H3 = styled.h3`
+  margin: 0;
+  font-size: 24px;
 `;
 
 export default class extends Component {
@@ -66,18 +78,23 @@ export default class extends Component {
   render() {
     return (
       <Wrapper>
-        <h3>Помощь с копированием</h3>
+        <H3>Рекомендуемый хостинг для установки сайта</H3>
 
         <Form>
           <ul>
-            <li>Скопировать сайт</li>
-            <li>Установить на хостинг</li>
-            <li>Сделать рабочими отправку заявок (формы)</li>
-            <li>Установить и настроить метрику и цели</li>
+            <li>Бесплатно <B>10 дней</B></li>
+            <li>Бесплатная простая установка <B>SSL-сертификата (https)</B></li>
+            <li>Живая поддержка <B>24/7</B> в онлайн чате</li>
+            <li>Простая и удобная панель управления</li>
+            <li>Высокая скорость, надежная работа, бекапы</li>
           </ul>
           <ButtonWrapper>
-            <Price>От 490 ₽</Price>
-            <Button onClick={this.handleClick}>Оставить заявку</Button>
+            {/*<Price>От 490 ₽</Price>*/}
+            <Button href="https://timeweb.com/ru/?i=36726" target="_blank"
+              onClick={() => (yaCounter50440108.reachGoal('timeweb'))}
+            >
+              Посмотреть
+            </Button>
           </ButtonWrapper>
         </Form>
       </Wrapper>

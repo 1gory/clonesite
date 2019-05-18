@@ -68,6 +68,10 @@ const Message = styled.div`
   display: ${(props) => props.message.text ? 'block' : 'none'};
 `;
 
+const Ads = styled.div`
+  padding: 30px 0;
+`;
+
 export default class extends Component {
   constructor() {
     super();
@@ -192,6 +196,12 @@ export default class extends Component {
       <Order openPopUp={this.openPopUp} />
 
       <FAQ/>
+
+      <Ads>
+        <a target="_new" href="https://timeweb.com/ru/?i=36726&a=130">
+          <img src="https://wm.timeweb.ru/images/posters/600x60/600x60-2-anim.gif" />
+        </a>
+      </Ads>
 
       <div id="vk_comments_block">
         <div id="vk_comments" />
