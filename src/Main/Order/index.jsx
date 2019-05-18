@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   max-width: 768px;
-  padding: 30px 15px;
   margin: 0 auto;
+  padding: 30px;
   text-align: left;
   background: #fafafa;
   border-radius: 20px;
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
 `;
 
 const Button = styled.a`
@@ -46,19 +49,15 @@ const Price = styled.div`
 `;
 
 const Form = styled.form`
-  // display: flex;
-  // justify-content: space-between;
-  & ul {
-    padding-left: 20px;
-  }
-  
   & li {
     padding-bottom: 5px;
   }
   
-  // @media (max-width: 675px) {
-  //   flex-direction: column;
-  // }
+  @media (max-width: 675px) {
+    & ul {
+      padding-left: 20px;
+    }
+  }
 `;
 
 const B = styled.span`
