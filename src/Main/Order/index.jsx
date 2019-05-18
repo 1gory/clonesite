@@ -92,7 +92,7 @@ export default class extends Component {
           </ul>
           <ButtonWrapper>
             {/*<Price>От 490 ₽</Price>*/}
-            <Button href="https://timeweb.com/ru/?i=36726" target="_blank"
+            <Button href="https://timeweb.com/ru/services/hosting/?i=36726" target="_blank"
               onClick={() => (yaCounter50440108.reachGoal('timeweb'))}
             >
               Посмотреть
