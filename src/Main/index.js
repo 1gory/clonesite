@@ -208,13 +208,20 @@ export default class extends Component {
       <FAQ/>
 
       <AdsDesctop>
-        <a target="_new" href="https://timeweb.com/ru/?i=36726&a=130">
+        <a
+          target="_new"
+          href="https://timeweb.com/ru/services/hosting/?i=36726&a=130"
+          onClick={() => (yaCounter50440108.reachGoal('banner'))}
+        >
           <img src="https://wm.timeweb.ru/images/posters/600x60/600x60-2-anim.gif" />
         </a>
       </AdsDesctop>
-
       <AdsMobile>
-        <a target="_new" href="https://timeweb.com/ru/?i=36726&a=91">
+        <a
+          target="_new"
+          href="https://timeweb.com/ru/services/hosting/?i=36726&a=91"
+          onClick={() => (yaCounter50440108.reachGoal('banner'))}
+        >
           <img src="https://wm.timeweb.ru/images/posters/240x200/240x200-1-anim.gif" />
         </a>
       </AdsMobile>
