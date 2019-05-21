@@ -68,19 +68,19 @@ const Message = styled.div`
   display: ${(props) => props.message.text ? 'block' : 'none'};
 `;
 
-const AdsDesctop = styled.div`
-  padding: 30px 0;
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const AdsMobile = styled.div`
-  padding-bottom: 15px;
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
+// const AdsDesctop = styled.div`
+//   padding: 30px 0;
+//   @media (max-width: 768px) {
+//     display: none;
+//   }
+// `;
+//
+// const AdsMobile = styled.div`
+//   padding-bottom: 15px;
+//   @media (min-width: 768px) {
+//     display: none;
+//   }
+// `;
 
 export default class extends Component {
   constructor() {
@@ -207,24 +207,24 @@ export default class extends Component {
 
       <FAQ/>
 
-      <AdsDesctop>
-        <a
-          target="_new"
-          href="https://timeweb.com/ru/services/hosting/?i=36726&a=130"
-          onClick={() => (yaCounter50440108.reachGoal('banner'))}
-        >
-          <img src="https://wm.timeweb.ru/images/posters/600x60/600x60-2-anim.gif" />
-        </a>
-      </AdsDesctop>
-      <AdsMobile>
-        <a
-          target="_new"
-          href="https://timeweb.com/ru/services/hosting/?i=36726&a=91"
-          onClick={() => (yaCounter50440108.reachGoal('banner'))}
-        >
-          <img src="https://wm.timeweb.ru/images/posters/240x200/240x200-1-anim.gif" />
-        </a>
-      </AdsMobile>
+      {/*<AdsDesctop>*/}
+        {/*<a*/}
+          {/*target="_new"*/}
+          {/*href="https://timeweb.com/ru/services/hosting/?i=36726&a=130"*/}
+          {/*onClick={() => (yaCounter50440108.reachGoal('banner'))}*/}
+        {/*>*/}
+          {/*<img src="https://wm.timeweb.ru/images/posters/600x60/600x60-2-anim.gif" />*/}
+        {/*</a>*/}
+      {/*</AdsDesctop>*/}
+      {/*<AdsMobile>*/}
+        {/*<a*/}
+          {/*target="_new"*/}
+          {/*href="https://timeweb.com/ru/services/hosting/?i=36726&a=91"*/}
+          {/*onClick={() => (yaCounter50440108.reachGoal('banner'))}*/}
+        {/*>*/}
+          {/*<img src="https://wm.timeweb.ru/images/posters/240x200/240x200-1-anim.gif" />*/}
+        {/*</a>*/}
+      {/*</AdsMobile>*/}
 
       <div id="vk_comments_block">
         <div id="vk_comments" />
