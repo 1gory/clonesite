@@ -80,7 +80,7 @@ export default class extends Component {
   render() {
     return (
       <Wrapper>
-        <H3>Рекомендуемый хостинг для установки сайта</H3>
+        <H3>Рекомендоавнный хостинг для установки сайта</H3>
 
         <Form>
           <ul>
@@ -95,7 +95,7 @@ export default class extends Component {
             <Button href="https://timeweb.com/ru/services/hosting/?i=36726" target="_blank"
               onClick={() => (yaCounter50440108.reachGoal('timeweb'))}
             >
-              Посмотреть
+              Перейти (регистрация и 10 дней бесплатно)
             </Button>
           </ButtonWrapper>
         </Form>
