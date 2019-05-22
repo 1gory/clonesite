@@ -28,6 +28,10 @@ const Button = styled.a`
   &:hover {
     box-shadow: -5px 5px 20px rgba(88, 94, 234, 0.55);  
   }
+  
+  @media (max-width: 675px) {
+    font-size: 14px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
