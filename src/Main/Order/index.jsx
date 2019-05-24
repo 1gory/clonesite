@@ -99,7 +99,7 @@ export default class extends Component {
             <Button href="https://timeweb.com/ru/services/hosting/?i=36726" target="_blank"
               onClick={() => (yaCounter50440108.reachGoal('timeweb'))}
             >
-              Перейти (регистрация и 10 дней бесплатно)
+              Подробнее
             </Button>
           </ButtonWrapper>
         </Form>
