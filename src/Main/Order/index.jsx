@@ -8,6 +8,11 @@ const Wrapper = styled.div`
   text-align: left;
   background: #fafafa;
   border-radius: 20px;
+  cursor: pointer;
+  transition: .2s;
+  // &:hover {
+  //   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);  
+  // }
   @media (max-width: 768px) {
     padding: 30px 15px;
   }
@@ -83,7 +88,7 @@ export default class extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper onClick={() => (yaCounter50440108.reachGoal('tap'))}>
         <H3>Рекомендоавнный хостинг для установки сайта</H3>
 
         <Form>
@@ -97,8 +102,10 @@ export default class extends Component {
           </ul>
           <ButtonWrapper>
             {/*<Price>От 490 ₽</Price>*/}
-            <Button href="https://timeweb.com/ru/services/hosting/?i=36726" target="_blank"
-              onClick={() => (yaCounter50440108.reachGoal('timeweb'))}
+            <Button href="https://timeweb.com/ru/services/hosting/?i=36726"
+                    target="_blank"
+                    rel="nofollow"
+                    onClick={() => (yaCounter50440108.reachGoal('timeweb'))}
             >
               Подробнее
             </Button>
