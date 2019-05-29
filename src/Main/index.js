@@ -121,7 +121,7 @@ export default class extends Component {
     }
     if(isUrl(this.state.url)){
       this.setState({message: {
-        text: 'Загрузка сайта скоро начнется',
+        text: 'Загрузка сайта скоро начнется, может занять немного времени',
         status: 'success',
       }});
       yaCounter50440108.reachGoal('clone_action');
