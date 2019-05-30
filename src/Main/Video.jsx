@@ -18,7 +18,7 @@ const H3 = styled.h3`
 
 const VideoWrapper = styled.div`
   padding-top: 30px;
-  height: 338px;
+  height: 337px;
   width: 600px;
   margin: 0 auto;
 `;
