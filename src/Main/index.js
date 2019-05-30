@@ -207,6 +207,7 @@ export default class extends Component {
       <Order openPopUp={this.openPopUp} />
 
       <Video />
+
       <FAQ/>
 
       {/*<AdsDesctop>*/}
