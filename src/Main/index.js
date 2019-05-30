@@ -7,6 +7,7 @@ import Popup from './PopUp';
 import Footer from '../generic/Footer';
 import Header from '../generic/Header';
 import Button from '../generic/Button';
+import Video from './Video';
 
 const Wrapper = styled.div`
   text-align: center;  
@@ -205,6 +206,7 @@ export default class extends Component {
 
       <Order openPopUp={this.openPopUp} />
 
+      <Video />
       <FAQ/>
 
       {/*<AdsDesctop>*/}

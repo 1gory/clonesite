@@ -89,7 +89,7 @@ export default class extends Component {
   render() {
     return (
       <Wrapper onClick={() => (yaCounter50440108.reachGoal('tap'))}>
-        <H3>Рекомендоавнный хостинг для установки сайта</H3>
+        <H3>Рекомендованный хостинг для установки сайта</H3>
 
         <Form>
           <ul>
