@@ -1,4 +1,6 @@
 # dependencies
+/src
+
 /node_modules
 
 /server/encryption/*
