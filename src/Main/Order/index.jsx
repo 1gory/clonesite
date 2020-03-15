@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 30px;
-  text-align: left;
-  background: #fafafa;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: .2s;
-  // &:hover {
-  //   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);  
-  // }
-  @media (max-width: 768px) {
-    padding: 30px 15px;
-  }
-`;
+import Wrapper from '../../generic/FromWrapper'
 
 const Button = styled.a`
   display: block;

@@ -8,6 +8,7 @@ import Footer from '../generic/Footer';
 import Header from '../generic/Header';
 import Button from '../generic/Button';
 import Video from './Video';
+import TelegramFrom from "./TelegramFrom";
 
 const Wrapper = styled.div`
   text-align: center;  
@@ -204,12 +205,11 @@ export default class extends Component {
 
       <Popup isPopUpOpen={isPopUpOpen} closePopUp={this.closePopUp} />
 
-      <iframe
-        src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C&targets-hint=&default-sum=25&button-text=11&hint=&successURL=&quickpay=shop&account=410015129393542"
-        width="423" height="222" frameBorder="0" allowTransparency="true" scrolling="no"></iframe>
+      <TelegramFrom />
 
       <br />
       <br />
+
       <Order openPopUp={this.openPopUp} />
 
       <Video />
