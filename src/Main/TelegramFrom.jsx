@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Wrapper from '../generic/FromWrapper';
-import telegramIcon from '../generic/telegramIcon.svg'
+import telegramIcon from '../generic/telegram-red.svg'
 
 const LinkWrapper = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export default () => (
   <a href="https://t.me/clonesite" target="_blank" rel="noopener noreferrer" onClick={() => (yaCounter50440108.reachGoal('telegram'))}>
     <Wrapper>
       <LinkWrapper>
-          Обсудить в telegram-канале
+          Задать вопрос / обсудить в telegram-чате
         <Icon src={telegramIcon} />
       </LinkWrapper>
     </Wrapper>
