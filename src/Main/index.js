@@ -9,6 +9,7 @@ import Header from '../generic/Header';
 import Button from '../generic/Button';
 import Video from './Video';
 import TelegramFrom from "./TelegramFrom";
+import FormWrapper from "../generic/FromWrapper";
 
 const Wrapper = styled.div`
   text-align: center;  
@@ -83,6 +84,22 @@ const Message = styled.div`
 //     display: none;
 //   }
 // `;
+
+const str = [
+  'Деньги – хороший слуга, но плохой хозяин.',
+  'Если хочешь избавиться от гостя, докучающего своими визитами, дай ему взаймы денег.',
+  'Не быть жадным – уже богатство, не быть расточительным – доход.',
+  'Бесплатное всегда дороже.',
+  'Воровство начинается с кражи луковицы.',
+  'Возможность украсть создает вора.',
+  'Вор живет в уверенности, что крадут все.',
+  'Жадность - это вор. А вор никогда не благодарит.',
+  'Девица губит красоту свою блудом, а мужчина мужество — воровством.',
+  'Того, кто крадет крючок с пояса, казнят, а тот, кто крадет царство, становится правителем.',
+  'Многие состояния, подобно рекам, имеют чистое начало, но, увеличиваясь, становятся грязными.',
+  'Всякий, кто украдёт из казны настолько, сколько стоит верёвка, на той же верёвке повешен будет.',
+  'Из всех воров дураки самые вредные: они одновременно похищают у нас время и настроение.',
+];
 
 export default class extends Component {
   constructor() {
@@ -204,6 +221,14 @@ export default class extends Component {
       </Form>
 
       <Popup isPopUpOpen={isPopUpOpen} closePopUp={this.closePopUp} />
+
+      <br />
+
+      <FormWrapper>
+        {str[Math.floor(Math.random() * str.length)]} ©
+      </FormWrapper>
+
+      <br />
 
       <TelegramFrom />
 
