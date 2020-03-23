@@ -11,9 +11,9 @@ const downloadWebsite = (url, hashPath) =>
   new Promise((resolve, reject) => {
     const path = `compressed/${hashPath}/`;
     exec(`wget -k -p -Q10M -e robots=off ${url} -P ${path}`, (error, stdout, stderr) => {
-      if (error) {
-        reject(stderr);
-      }
+      // if (error) {
+      //   reject(stderr);
+      // }
 
       resolve(path);
     });
@@ -61,6 +61,7 @@ router.post('/copy', async (req, res, next) => {
     res.set('Content-Type', 'application/zip');
     readStream.pipe(res);
   } catch (e) {
+    console.log(e.exit);
     res.status(400);
     res.json({
       message: 'Не удается скопировать сайт',
