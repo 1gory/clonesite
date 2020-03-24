@@ -108,6 +108,7 @@ export default class extends Component {
     this.state = {
       loading: false,
       isPopUpOpen: false,
+      quoteKey: Math.floor(Math.random() * str.length),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -198,7 +199,7 @@ export default class extends Component {
   };
 
   render() {
-    const { isPopUpOpen } = this.state;
+    const { isPopUpOpen, quoteKey } = this.state;
     return <Wrapper>
       <Header/>
       <Form>
@@ -225,7 +226,7 @@ export default class extends Component {
       <br />
 
       <FormWrapper>
-        {str[Math.floor(Math.random() * str.length)]} ©
+        {str[quoteKey]} ©
       </FormWrapper>
 
       <br />
